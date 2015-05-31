@@ -74,7 +74,56 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /*Mahesh theme END*/
 
+ol.titlesPrivacy {
+	padding: 10px;
+}
 
+li.toc {
+	color: #16765C;
+	cursor: pointer;
+	padding: 5px;
+	font-size: 0.8em;	
+}
+
+li.toc a {
+	color: #16765C;
+}
+
+li.toc a:hover {
+	color: #fff;
+}
+
+li.header {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.memberDescription {
+	text-align: justify;
+	font-size: 0.8em;
+}
+
+.termsOfService p {
+	font-size: 0.8em;
+	text-align: justify !important;
+}
+
+.termsOfService p strong{
+	font-weight: 700;
+	display:block;
+}
+
+ul.termsList li {
+	font-size: 0.8em;
+	padding: 0.5em;
+	line-height: 1.4em;
+}
+
+.centerAddress {
+	line-height: 1.2em;
+	font-size: 0.8em;
+	padding-bottom: 20px;
+}
 
 /* Base */
 body {
@@ -113,9 +162,11 @@ body {
 }
 
 p.intro {
+	font-size: 0.8em;	
 	margin-bottom: 30px;
 	margin-top: 30px;
 	text-align:center;
+	font-weight: 500;
 }
 
 .teamMember {
@@ -205,7 +256,7 @@ h2.memberName {
 /* Accent color */
 a {
 	text-decoration: none;
-	color: #5694f1;
+	color: #16765C;;
 	font-weight: 200;
 }
 
@@ -224,7 +275,7 @@ h2 {
 
 p {
 	line-height: 1.8;
-	 margin-bottom: 30px;
+	 margin-bottom: 20px;
 	 font-size: 16px;
 	 font-weight: 200;
 }
