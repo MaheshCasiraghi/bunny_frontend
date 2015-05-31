@@ -1,1 +1,6 @@
-{"aws-bucket-name":"terms.coffeestrap.com","aws-access-key":"AKIAIISZC2YJALOTOHMQ","aws-bucket-website":"privacy.coffeestrap.com.s3-website-us-east-1.amazonaws.com","port":8966}
+{
+    "aws-access-key": "AKIAIISZC2YJALOTOHMQ",
+    "aws-bucket-name": "terms.coffeestrap.com",
+    "aws-bucket-website": "terms.coffeestrap.com.s3-website-us-east-1.amazonaws.com",
+    "port": 8966
+}
