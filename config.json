@@ -1,6 +1,6 @@
 {
     "aws-access-key": "AKIAIISZC2YJALOTOHMQ",
-    "aws-bucket-name": "team.coffeestrap.com",
-    "aws-bucket-website": "team.coffeestrap.com.s3-website-us-east-1.amazonaws.com",
+    "aws-bucket-name": "privacy.coffeestrap.com",
+    "aws-bucket-website": "privacy.coffeestrap.com.s3-website-us-east-1.amazonaws.com",
     "port": 8966
 }

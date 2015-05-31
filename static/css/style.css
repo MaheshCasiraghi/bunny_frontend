@@ -63,12 +63,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 #sharing a.twitter:hover {
 	text-decoration: none; 
-	color: #408000;
+	color: #fff;
 }
 
 #sharing a.facebook:hover {
 	text-decoration: none; 
-	color: #ff8000;
+	color: #fff;
 }
 
 
@@ -81,7 +81,8 @@ body {
 	font:16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	color: #777;
+	color: #fff;
+	background: #53caa4;
 }
 
 /*#wrapper {
@@ -102,6 +103,13 @@ body {
 	padding-bottom: 20px;
 	text-align: center;
 	position: relative;
+}
+
+#header.paddingHeader {
+	border-bottom: none;
+	padding: 5px;	
+	/*padding-top:5px;*/
+	margin-bottom: 0px !important;
 }
 
 p.intro {
@@ -141,11 +149,12 @@ h2.memberName {
 
 #sharing a {
 	font-size: 20px;
-	font-size: 23px;
+	font-size: 20px;
 	margin-left: 1px;
-	color: #d4d4d4;
+	color: #16765C;
 	display: inline-block;
 	vertical-align: middle;
+	font-weight: 100;
 }
 
 #footerSharingWrapper {
@@ -164,6 +173,8 @@ h2.memberName {
 	height: 80px;
 	border-radius: 50%;
 	margin-bottom: 5px;
+	background: #fff;
+	padding: 1px;
 }
 
 /* Link to Documentation */
@@ -207,7 +218,7 @@ h1 {
 h2 {
 	font-size: 20px;
 	font-weight: 300;
-	color: #aaa; 
+	color: #fff; 
 	margin-top: 10px;
 }
 
