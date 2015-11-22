@@ -1,6 +1,6 @@
 {
     "aws-access-key": "AKIAIISZC2YJALOTOHMQ",
-    "aws-bucket-name": "terms.coffeestrap.com",
-    "aws-bucket-website": "terms.coffeestrap.com.s3-website-us-east-1.amazonaws.com",
+    "aws-bucket-name": "www.seedfounder.com",
+    "aws-bucket-website": "www.seedfounder.com.s3-website-us-east-1.amazonaws.com",
     "port": 8966
 }
