@@ -1,107 +1,142 @@
 {% extends "base.html" %}
 {% block content %}
-	<section id="wrapper">
-		<header id="header">
-			<a href="http://www.coffeestrap.com"><img class="smallImg" src="https://s3.amazonaws.com/webassets.coffeestrap.com/landing/images/logoBubble.png"></a>
-		</header>
-		<header id="header" class="paddingHeader">
-			<h2>TERMS OF SERVICE</h2>
-			<p class="intro">CoffeeStrap is created by CoffeeStrap B.V. (“CoffeeStrap” or “we”).  </p><p class="intro">These Terms of Service (“TOS”) govern the use of CoffeeStrap online at CoffeeStrap.com and on mobile devices (collectively, “CoffeeStrap”).</p>
-		</header>
-		<div class="teamMember">
-			<div id="nameWrapper">
-				<h3 style="padding-bottom:10px;"> <strong style="font-weight:700;">Version: 1.1.0</strong> <br/><strong style="font-style:italic; font-size: 0.8em;">Last Modified: 31/05/2015</strong> </h3>
-			</div>
-			<div id="descriptionWrapper">
-				<p class="memberDescription">
-	These TOS represent a binding contract between you and CoffeeStrap B.V., and by creating an account or otherwise accessing CoffeeStrap, you expressly agree to be bound by them, INCLUDING THE AGREEMENT TO ARBITRATE AND WAIVER OF CLASS ACTION CLAIMS CLAUSE CONTAINED IN <a href="#agreement-to-arbitrate-and-waiver-of-class-action-claims">SECTION 10</a>.  The TOS incorporate the provisions of the <a href="http://privacy.coffeestrap.com">Privacy Policy</a>, so please review it carefully as well.  If you do not agree to be bound by the TOS, you may not use or purchase CoffeeStrap.
-				</p>
-				<div class="termsOfService">
-					<div class='legal' id='terms'>
-						<div class="container"><div class="row"><div class="span9">
+    <header class="header ">
+        <a href="/index.html">
+            <div class="logo">
+                <!-- <span class="logoicon"></span> Human -->
+                <img class="logoicon full" src="{% static '/images/sf_logo_small.png' %}">
+                <img class="logoicon shrink" src="{% static '/images/sf_icon.png' %}">
+            </div>
+        </a>
+        <a href="#" class="navigation-icon" id="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </a>
+        <ul class="navigation" id="menu" >
+            <li><a href="https://live.uxpin.com/eb5411df53cb1144d2321b3b6a367fb8675467a1#/pages/12410441">Wireframes</a></li>
+            <li><a href="http://www.bunnyinc.com">Backend Code</a></li>
+            <li><a href="/about">Frontend Code</a></li>
+        </ul>
+        
+        <a id="loginsignup" rel="leanModal" name="investor_form" class="button outline" href="#investor_form">Documentation</a>
+        
+    </header>
+    
+    <section id="intro">
+        <div class="headcopy">
+            <div id="introPreSubmit">
+                <h1>
+                <span class="inline">#nowplaying in</span>
+                <span class="inline" id="locationFillA">...</span>
+                </h1>
+                <p>
+                    <span class="inline"> This page shows #nowplaying tweets in </span>
+                    <span class="inline" id="locationFillB"> ... </span>
+                    <span class="inline">that contain a youtube link.</span>
+                    It also allows you to post a #nowplaying tweet with a YouTube link.
+                </p>
+            </div>
+            <div id="introPostSubmit" style="display:none;">
+                <h1>
+                <span class="inline">Thank you for posting your video.</span>
+                </h1>
+                <p>
+                    <span class="inline"> Bunny Inc. #NowPlaying is a groing community.</span>
+                    <span class="inline"><a href="https://twitter.com/BInowplaying">Follow us on Twitter!</a></span>
+                </p>
+                <div>
+                    <img src="/static/images/minibunny.png" />
+                </div>
+            </div>
+            <form action="https://bunnybackend.herokuapp.com/post-tweet" method="GET" id="video-form" target="hidden_iframe_video" onsubmit="submitted=true;">
+                <iframe name="hidden_iframe_video" id="hidden_iframe_video" style="display:none;" onload="if(submitted) { onVideoSubmitted(); }"></iframe>
+                <div id="videoInputWrapper">
+                    <span class="input input--hoshi">
+                        <input type="url" required pattern="https?://www.youtube.com/.+" name="video" required="true" class="input__field input__field--hoshi" id="video" placeholder="                    http://youtube.com/" onfocus="this.placeholder = ''" onblur="this.placeholder = '                    http://youtube.com/'"/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+                            <span class="input__label-content input__label-content--hoshi">Video URL</span>
+                        </label>
+                    </span>
+                </div>
+                <div id="commentInputWrapper">
+                    <span class="input input--hoshi">
+                        <input type="text" name="comment" required="true" class="input__field input__field--hoshi" id="comment" />
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+                            <span class="input__label-content input__label-content--hoshi">Comment</span>
+                        </label>
+                    </span>
+                </div>
+                <input type="submit" name="submit" value="Tweet to #nowplaying" class="button investorsignup">
+            </form>
+        </div>
+    </section>
 
-						<ol>
-							<li class='toc'><a href="#your-account-information-and-email">Your Account Information and Email</a></li>
-							<li class='toc'><a href="#intellectual-property">Intellectual Property</a></li>
-							<li class='toc'><a href="#your-license-to-use-CoffeeStrap">Your License to Use CoffeeStrap</a></li>
-							<li class='toc'><a href="#canceling-your-account">Canceling Your Account</a></li>
-							<li class='toc'><a href="#restrictions-and-prohibited-uses">Restrictions and Prohibited Uses</a></li>
-							<li class='toc'><a href="#disclaimers">Disclaimers</a></li>
-							<li class='toc'><a href="#limitation-of-liability">Limitation of Liability</a></li>
-							<li class='toc'><a href="#dmca-contact">DMCA Contact</a></li>
-							<li class='toc'><a href="#indemnity">Indemnity</a></li>
-							<li class='toc'><a href="#agreement-to-arbitrate-and-waiver-of-class-action-claims">Agreement to Arbitrate and Waiver of Class Action Claims</a></li>
-							<li class='toc'><a href="#general">General</a></li>
-						</ol>
-						<ol>
-							<section class="section" id="your-account-information-and-email"><li class='header'>Your Account Information and Email</li>
-							</section><p>CoffeeStrap provides a personalized content and training experience. When you create an account, we require you to provide information about yourself, including your email address and a password (“Account Information“).</p>
-							<p>Some CoffeeStrap features either now or in the future may allow you to post or submit content and materials for publication on CoffeeStrap (“Your Content”).  You own any intellectual property rights to Your Content, but you agree that we can use, reproduce, modify, adapt and publish Your Content for purposes of enabling us to offer CoffeeStrap or the features you have elected to use.  You are responsible for Your Content, and acknowledge that once published, we cannot always remove it.</p>
-							<p>You agree that we may send communications to your email address for customer service, confirmations, newsletters, product offers and other matters.</p>
-							<p>You may choose to opt out of much of this email correspondence through your <a href="https://app.coffeestrap.com/#/settings/profile">Account Settings pages</a> or by using the links at the bottom of our emails.</p>
-							<p>Please note that even if you opt out, we’ll still send you account-related emails, such as purchase confirmation and password reset emails.</p>
-							<section class="section" id="intellectual-property"><li class='header'>Intellectual Property</li>
-							</section><p>CoffeeStrap is protected by Dutch and international intellectual property laws and you agree to abide by them. Without our prior written consent, you may not download, copy or store CoffeeStrap content in any form outside of CoffeeStrap and you may not modify, publish, transmit, participate in the transfer or sale of, reproduce, create derivative works based on, distribute, or perform any CoffeeStrap content. You agree that all data and algorithms in our flash files and associated servers are “trade secrets” as defined, without limitation, in the Dutch Trade Secrets Law. You agree to comply with reasonable written requests from us to help us in protecting our proprietary and intellectual property rights in CoffeeStrap. All intellectual property rights in CoffeeStrap are, as between you and CoffeeStrap B.V., the sole and exclusive property of CoffeeStrap B.V..</p>
-							<p>Some CoffeeStrap features either now or in the future may allow you to post or submit content and materials for publication on CoffeeStrap (“Your Content”).  You own any intellectual property rights to Your Content, but you agree that we can use, reproduce, modify, adapt and publish Your Content for purposes of enabling us to offer CoffeeStrap or the features you have elected to use.  You are responsible for Your Content, and acknowledge that once published, we cannot always remove it.</p>
-							<p>We appreciate when you provide us feedback through customer service or by email or social features, but we may use any feedback, comments, or suggestions without any obligations to you.</p>
-							<section class="section" id="your-license-to-use-CoffeeStrap"><li class='header'>Your License to Use CoffeeStrap</li>
-							</section><p>We are providing you with access to CoffeeStrap pursuant to a limited, non-exclusive, non-sublicenseable, non-transferable, revocable license.  You can use CoffeeStrap for personal, non-commercial use only, and subject to the TOS.  This license is available to you as long as you are not barred from CoffeeStrap by applicable law and your account is not terminated by us or by you.  If the TOS are not enforceable where you are located, you may not use CoffeeStrap.  CoffeeStrap B.V. reserves all right, title, and interest not expressly granted under this license to the fullest extent possible under applicable laws.</p>
-							<section class="section" id="canceling-your-account"><li class='header'>Canceling Your Account</li>
-							</section><p>While we hope you enjoy using CoffeeStrap, you may cancel your account at any time by contacting our <a href="http://feedback.coffeestrap.com">customer support team</a>.  For information about the availability of refunds, please refer to the <a href="http://feedback.coffeestrap.com">same source</a>.</p>
-							<section class="section" id="restrictions-and-prohibited-uses"><li class='header'>Restrictions and Prohibited Uses</li>
-							</section><p>CoffeeStrap is thousands of people, and we are proud of the trust our users place in us.  We expect, in turn, that our users do not misuse our products and services.  Except with our written permission, you shall not:</p>
-							<ul class="termsList">
-								<li>Attempt to impersonate another person or use another person’s CoffeeStrap account information without authorization;</li>
-								<li>Use or distribute CoffeeStrap for your own scientific or clinical research purposes;</li>
-								<li>Violate or attempt to violate CoffeeStrap’s security features, including logging into a server that you are not authorized to access, or probing the vulnerability of CoffeeStrap systems and networks;</li>
-								<li>Redistribute, decompile, reverse engineer, publish, or copy CoffeeStrap, including its javascript (.JS) frontend infrastructure and text and voice analyitics functionalities;</li>
-								<li>Use CoffeeStrap for the purpose of creating a product with a substantially similar look, feel or design;</li>
-								<li>Access or search CoffeeStrap by any means other than our publicly supported interfaces (for example, “scraping”);</li>
-								<li>Interfere with others’ use and enjoyment of CoffeeStrap;</li>
-								<li>Use CoffeeStrap or any trademarks, analytics names, trade names, service marks, copyrights, or logos of CoffeeStrap B.V., in unsolicited mailings, spam material, contests or surveys, or to create the impression that such items are associated with you;</li>
-								<li>Violate any third party’s rights, including intellectual property or privacy rights;</li>
-								<li>Threaten, stalk, harm, or harass others; or engage in activity in connection that is fraudulent, abusive, defamatory, illegal or otherwise inappropriate.</li>
-							</ul>
-							<p></p>
-							<p>Engaging in prohibited uses is grounds for immediate termination of your CoffeeStrap account, and may also subject you to civil or criminal penalties.</p>
-							<section class="section" id="disclaimers"><li class='header'>Disclaimers</li>
-							</section><p>YOU AGREE THAT USE OF COFFEESTRAP IS AT YOUR OWN SOLE RISK AND THAT CoffeeStrap IS PROVIDED ON AN “AS IS”, “AS AVAILABLE” BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.  TO THE MAXIMUM EXTENT PERMITTED BY LAW, CoffeeStrap B.V. AND ITS AFFILIATES, OFFICERS AND/OR EMPLOYEES EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED, REGARDING COFFEESTRAP INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT.  Some jurisdictions do not allow the disclaimers in this paragraph, so they may not apply to you.</p>
-							<p>COFFEESTRAP B.V. STRIVES TO MAINTAIN COFFEESTRAP ON A COMMERCIALLY REASONABLE BASIS AND CANNOT GUARANTEE THAT YOU WILL HAVE ACCESS TO COFFEESTRAP AT ALL TIMES.</p>
-							<p>COFFEESTRAP IS NOT A MEDICAL, PSYCHOLOGICAL, OR RELATIONAL WELLNESS SERVICE AND IS NOT TO BE USED FOR THE PURPOSE OF SEEKING, AND COFFEESTRAP IS NOT PROVIDING, MEDICAL, PSYCHOLOGICAL, REALTIONAL WELLNESS TREATMENT OR ADVICE.</p>
-							<section class="section" id="limitation-of-liability"><li class='header'>Limitation of Liability</li>
-							</section><p>IN NO EVENT SHALL COFFEESTRAP B.V. OR ITS AFFILIATES, OFFICERS AND/OR EMPLOYEES BE LIABLE WITH RESPECT TO COFFEESTRAP FOR (I) IN THE AGGREGATE, ANY AMOUNT IN EXCESS OF THE FEES PAID BY YOU TO SUBSCRIBE TO COFFEESTRAP; (II) LOST PROFITS, LOST DATA, OR FAILURE TO MEET ANY DUTY INCLUDING WITHOUT LIMITATION GOOD FAITH AND REASONABLE CARE ARISING OUT OF YOUR ACCESS TO OR USE OF COFFEESTRAP; OR (III) ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER.</p>
-							<p>YOU AGREE THAT THIS LIMITATION OF LIABILITY REPRESENTS A REASONABLE ALLOCATION OF RISK AND IS A FUNDAMENTAL ELEMENT OF THE BASIS OF THE BARGAIN BETWEEN COFFEESTRAP B.V. AND YOU. YOU UNDERSTAND THAT COFFEESTRAP WOULD NOT BE PROVIDED WITHOUT SUCH LIMITATIONS.  Some jurisdictions do not allow the limitations in this section, so they may not apply to you.</p>
-							<section class="section" id="dmca-contact"><li class='header'>DMCA Contact</li>
-							</section><p>We comply with the provisions of the Digital Millennium Copyright Act applicable to service providers. If you have any complaints with respect to material posted on CoffeeStrap, you may contact our designated agent by email to <a href="mailto:crew@coffeestrap.com">crew@coffeestrap.com</a> or at the following address:</p>
-							<div class="centerAddress"><center>CoffeeStrap B.V.,  <br/> ATTN: DMCA Complaint <br/> 182 Herengracht, <br/> 1016BR, Amsterdam, The Netherlands</center></div>
-							<p>You must include the following information in your complaint:</p>
-							<ul class="termsList">
-								<li>a description of the copyrighted work or other intellectual property that you claim has been infringed;</li>
-								<li>a description of the material that you claim is infringing and where it is located on CoffeeStrap;</li>
-								<li>your mailing address, telephone number, and if available, email address;</li>
-								<li>a statement by you that you have a good faith belief that the use of the material on CoffeeStrap is not authorized by the copyright owner, its agent, or the law;</li>
-								<li>a statement by you that the above information in your notice is accurate and that, under penalty of perjury, you are the copyright or intellectual property owner or authorized to act on behalf of the copyright or intellectual property owner; and</li>
-								<li>an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other right being infringed.</li>
-							</ul>
-							<section class="section" id="indemnity"><li class='header'>Indemnity</li>
-							</section><p>You will indemnify and hold harmless CoffeeStrap B.V., its affiliates, officers and/or employees, including by paying costs and attorneys’ fees, from any claim or demand made by any third party due to or arising out of your access to CoffeeStrap, Your Content, or the violation of the TOS by you.</p>
-							<section class="section" id="agreement-to-arbitrate-and-waiver-of-class-action-claims"><li class='header'>Agreement to Arbitrate and Waiver of Class Action Claims</li>
-							</section><p><strong>PLEASE READ THIS SECTION 10 CAREFULLY – IT MAY SIGNIFICANTLY AFFECT YOUR LEGAL RIGHTS, INCLUDING YOUR RIGHT TO FILE A LAWSUIT IN COURT.</strong></p>
-							<p>If a dispute arises, our goal is to provide you a neutral and cost effective means to resolve it quickly.  Most disputes can be resolved informally.  Before filing a claim against CoffeeStrap B.V., you agree to try to resolve the dispute by contacting us in writing at CoffeeStrap B.V., , ATTN: DISPUTE NOTICE, 182 Herengracht, 1016BR, Amsterdam, The Netherlands, or by email to <a href="mailto:crew@coffeestrap.com">crew@coffeestrap.com</a>. Before we file a claim against you, we agree to contact you at the email address associated with your CoffeeStrap account.  If the dispute is not resolved within 30 days of notice, either you or we may bring a formal proceeding pursuant to the following procedures:</p>
-							<p><strong><u>A.  GENERAL.</u></strong> <strong>YOU AGREE THAT YOU AND COFFEESTRAP B.V. WILL RESOLVE THROUGH BINDING ARBITRATION ANY DISPUTE, CLAIM OR CONTROVERSY BETWEEN US ARISING OUT OF OR RELATING IN ANY WAY TO COFFEESTRAP OR YOUR USE THEREOF, INCLUDING THESE TOS (collectively, “ARBITRAL CLAIMS”)</strong>, with a few exceptions set forth below.  The arbitrator, and not any court, shall have exclusive authority to resolve all disputes arising out of or relating to the interpretation, applicability, enforceability, or formation of this Agreement to Arbitrate, including any claim that all or any part of this Agreement to Arbitrate is void or voidable, or whether a claim is subject to arbitration.<br/> ARBITRATION IS DIFFERENT FROM COURT. THE RULES, INCLUDING DISCOVERY, ARE DIFFERENT AND NO JUDGE OR JURY IS PRESENT AT AN ARBITRATION.  IN SOME INSTANCES, THE COSTS OF ARBITRATION COULD EXCEED THE COST OF LITIGATION, AND THE RIGHT TO DISCOVERY MAY BE MORE LIMITED.  THE AWARD IS FINAL AND BINDING AND SUBJECT ONLY TO LIMITED REVIEW BY A COURT. <strong>YOU UNDERSTAND THAT, ABSENT THIS MANDATORY PROVISION, YOU MAY HAVE THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL.</strong></p>
-							<p><strong><u>B.  EXCEPTIONS TO ARBITRAL CLAIMS.</u></strong>  As an exception to this Section 10, you may assert claims on an individual basis, if they qualify under applicable rules, in Small Claims court.  Also, either you or we may bring claims to enforce intellectual property rights without first engaging in arbitration or the informal dispute resolution described in this Section 10.</p>
-							<p><strong><u>C.  CLASS ACTION WAIVER.</u> YOU AND COFFEESTRAP B.V. AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</strong>  YOU FURTHER AGREE WITH COFFEESTRAP B.V. THAT NEITHER YOU NOR COFFEESTRAP B.V. WILL JOIN ANY ARBITRAL CLAIM WITH THE CLAIM OF ANY OTHER PERSON OR ENTITY IN A LAWSUIT, ARBITRATION OR OTHER PROCEEDING; THAT NO ARBITRAL CLAIM WILL BE RESOLVED ON A CLASS-WIDE BASIS; THAT NEITHER YOU NOR COFFEESTRAP B.V. WILL ASSERT AN ARBITRAL CLAIM IN A REPRESENTATIVE CAPACITY ON BEHALF OF ANYONE ELSE; AND BOTH PARTIES EXPRESSLY WAIVE THEIR RIGHT TO FILE A CLASS ACTION OR SEEK RELIEF ON A CLASS BASIS.  If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable or that arbitration can proceed on a class basis, then this Agreement to Arbitrate shall be deemed null and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.</p>
-							<p><strong><u>D.  NO RIGHT TO JURY TRIAL.</u></strong>  YOU AND COFFEESTRAP B.V. ALSO HEREBY WAIVE THE RIGHT TO A JURY TRIAL EVEN IF THIS AGREEMENT TO ARBITRATE IS HELD NOT TO APPLY.  <strong>YOU EXPRESSLY WAIVE YOUR RIGHT TO A JURY TRIAL IN THE EVENT THAT EITHER PARTY SELECTS ARBITRATION TO RESOLVE THE DISPUTE UNDER THIS AGREEMENT.</strong></p>
-							<p><strong><u>E.  30 DAY OPT OUT RIGHT.</u></strong> You have the right to opt-out and not be bound by the arbitration and the class action waiver provisions set forth in this Section 10 by sending written notice of your decision to opt-out to the following address:  CoffeeStrap B.V., ATTN: Arbitration Opt-out, 182 Herengracht, 1016BR, Amsterdam, The Netherlands, or by email to <a href="mailto:crew@coffeestrap.com">crew@coffeestrap.com</a>.  For new users, the notice must be sent within 30 days of registering for CoffeeStrap, and for existing users, the notice must be sent within 30 days of the effective date of this policy.  If you do not opt-out, you shall be bound to the terms in this Section 10. If you choose to opt-out, CoffeeStrap B.V. also will not be bound.</p>
-							<section class="section" id="general"><li class='header'>General</li>
-							</section><p>(a) <u>Severability and Waiver.</u> If any part of the TOS is held invalid or unenforceable, the remaining provisions of the TOS will remain in full effect and an enforceable term will be substituted reflecting yours and our intent as closely as possible.  Either party’s failure to enforce any term or condition in the TOS is not a waiver of its right to do so later.</p>
-							<p>(b) <u>Governing Law, Jurisdiction and Venue.</u> The TOS are governed by Dutch law without regard to conflict of law provisions.  Both parties further consent to the personal jurisdiction of and exclusive venue in the federal and state courts of The Kingdom of The Netherlands, as the legal forum for any dispute between them.</p>
-							<p>(c) <u>Change Policy.</u> The TOS may be updated seldomly.  If we make material changes, we will provide advance notice to you either by email, by posting a notification on CoffeeStrap or by posting an updated TOS on CoffeeStrap at least 30 days in advance of the effective date of the updated TOS.  Please note that unless otherwise provided by applicable law, your continued use of CoffeeStrap following the effective date means that you agree with, and consent to be bound by, the updated TOS.</p>
-							<p>(d) <u>Miscellaneous.</u> The TOS are the complete and exclusive statement of the mutual understanding of the parties and supersede all previous written and oral agreements relating to the subject matter of the TOS.  If there is any conflict between the TOS and any additional terms, conditions, and rules posted by CoffeeStrap B.V. on CoffeeStrap, the TOS shall govern, unless otherwise indicated.  Sections 2-11 shall survive any termination of the TOS.</p>
-						</ol>
-					</div></div></div></div>
-				</div>
-			</div>
-		</div>
-	</section>
-{% endblock content %}
+
+
+
+
+
+
+
+    
+    <section class="getactive">
+
+            <div id="twitterFeed"></div>
+
+
+    </section>
+   
+
+   
+        
+        <div id="investor_form">
+            <div id="form-modal">
+                <div id="form-header">
+                    <a id="closeButton" href="#"></a>
+                    <h3 id="signuptitle">But.. where are docs?</h3>
+                    <h3 id="thankstitle" style="display:none;">Brilliant! </h3>
+                    <p id="calltoaction" class="formcopy">This project is functional but not yet documented. I am going to comment code and produce a readme while flying back to Europe. It will be up hopefully up in a couple of days! :-) For urgent issues, feel free to leave your email here, and I am going to contact sooon.</p>
+                    <p id="thanks" class="formcopy" style="display:none;">I am going to reach out asap with news.</p>
+                </div>
+                <form action="https://docs.google.com/forms/d/1ddXeT9u8WgBPs-7TauapzhsM1As1sutBYFznaqq5se8/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onEmailSubmitted(); }"></iframe>
+                    <span class="input input--hoshi">
+                        <input type="email" name="entry.1144083353" class="input__field input__field--hoshi" id="entry_1144083353" required="true" />
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+                            <span class="input__label-content input__label-content--hoshi">Email</span>
+                        </label>
+                    </span>
+                    <input type="hidden" name="draftResponse" value="[,,&quot;-6729462436756438454&quot;]">
+                    <input type="hidden" name="pageHistory" value="0">
+                    <input type="hidden" name="fvv" value="0">
+                    <input type="hidden" name="fbzx" value="-6729462436756438454">
+                    <input type="submit" name="submit" value="submit" class="button investorsignup">
+                    <div class="error-message" id="949681004_errorMessage"></div>
+                </form>
+            </div>
+        </div>
+        <div id="lean_overlay" style="display:none; opacity:0.5;"></div>
+        
+        <footer>
+            <div class="contentwrapper">
+                <div class="container">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Android</a></li>
+                        <li><a href="#">iOS</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                    <ul class="social">
+                        <li><a href="#"><img src="/static/images/footer-facebook.png" width="18" height="18"></a></li>
+                        <li><a href="#"><img src="/static/images/footer-twitter.png" width="21" height="18"></a></li>
+                        <li><a href="#"><img src="/static/images/footer-instagram.png" width="18" height="18"></a></li>
+                    </ul>
+                    <p>&copy; 2015 SeedFounder <a class="privacylink" href="/privacy">Privacy</a><a class="privacylink"href="/terms">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    {% endblock content %}
