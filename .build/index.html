@@ -26,7 +26,7 @@
 
 </head>
 
-<body onload="initializeGeo()">
+<body onload="initialize()">
 	
     <header class="header ">
         <a href="/index.html">
@@ -99,75 +99,48 @@
             </form>
         </div>
     </section>
-
-
-
-
-
-
-
-
     
     <section class="getactive">
-
-            <div id="twitterFeed"></div>
-
-
+        <div id="twitterFeed"></div>
     </section>
-   
-
-   
-        
-        <div id="investor_form">
-            <div id="form-modal">
-                <div id="form-header">
-                    <a id="closeButton" href="#"></a>
-                    <h3 id="signuptitle">But.. where are docs?</h3>
-                    <h3 id="thankstitle" style="display:none;">Brilliant! </h3>
-                    <p id="calltoaction" class="formcopy">This project is functional but not yet documented. I am going to comment code and produce a readme while flying back to Europe. It will be up hopefully up in a couple of days! :-) For urgent issues, feel free to leave your email here, and I am going to contact sooon.</p>
-                    <p id="thanks" class="formcopy" style="display:none;">I am going to reach out asap with news.</p>
-                </div>
-                <form action="https://docs.google.com/forms/d/1ddXeT9u8WgBPs-7TauapzhsM1As1sutBYFznaqq5se8/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onEmailSubmitted(); }"></iframe>
-                    <span class="input input--hoshi">
-                        <input type="email" name="entry.1144083353" class="input__field input__field--hoshi" id="entry_1144083353" required="true" />
-                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
-                            <span class="input__label-content input__label-content--hoshi">Email</span>
-                        </label>
-                    </span>
-                    <input type="hidden" name="draftResponse" value="[,,&quot;-6729462436756438454&quot;]">
-                    <input type="hidden" name="pageHistory" value="0">
-                    <input type="hidden" name="fvv" value="0">
-                    <input type="hidden" name="fbzx" value="-6729462436756438454">
-                    <input type="submit" name="submit" value="submit" class="button investorsignup">
-                    <div class="error-message" id="949681004_errorMessage"></div>
-                </form>
+    
+    
+    <div id="investor_form">
+        <div id="form-modal">
+            <div id="form-header">
+                <a id="closeButton" href="#"></a>
+                <h3 id="signuptitle">But.. where are docs?</h3>
+                <h3 id="thankstitle" style="display:none;">Brilliant! </h3>
+                <p id="calltoaction" class="formcopy">This project is functional but not yet documented. I am going to comment code and produce a readme while flying back to Europe. It will be up hopefully up in a couple of days! :-) For urgent issues, feel free to leave your email here, and I am going to contact sooon.</p>
+                <p id="thanks" class="formcopy" style="display:none;">I am going to reach out asap with news.</p>
+            </div>
+            <form action="https://docs.google.com/forms/d/1ddXeT9u8WgBPs-7TauapzhsM1As1sutBYFznaqq5se8/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onEmailSubmitted(); }"></iframe>
+                <span class="input input--hoshi">
+                    <input type="email" name="entry.1144083353" class="input__field input__field--hoshi" id="entry_1144083353" required="true" />
+                    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+                        <span class="input__label-content input__label-content--hoshi">Email</span>
+                    </label>
+                </span>
+                <input type="hidden" name="draftResponse" value="[,,&quot;-6729462436756438454&quot;]">
+                <input type="hidden" name="pageHistory" value="0">
+                <input type="hidden" name="fvv" value="0">
+                <input type="hidden" name="fbzx" value="-6729462436756438454">
+                <input type="submit" name="submit" value="submit" class="button investorsignup">
+                <div class="error-message" id="949681004_errorMessage"></div>
+            </form>
+        </div>
+    </div>
+    <div id="lean_overlay" style="display:none; opacity:0.5;"></div>
+    
+    <footer>
+        <div class="contentwrapper">
+            <div class="container">
+                <p>&copy; 2015 #nowplaying <a class="privacylink" href="#">Privacy</a><a class="privacylink"href="#">Terms of Service</a></p>
             </div>
         </div>
-        <div id="lean_overlay" style="display:none; opacity:0.5;"></div>
-        
-        <footer>
-            <div class="contentwrapper">
-                <div class="container">
- <!--                    <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="#">Web</a></li>
-                        <li><a href="#">Android</a></li>
-                        <li><a href="#">iOS</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul> -->
-                    <ul class="social">
-                        <li><a href="#"><img src="/static/images/footer-facebook.png" width="18" height="18"></a></li>
-                        <li><a href="#"><img src="/static/images/footer-twitter.png" width="21" height="18"></a></li>
-                        <li><a href="#"><img src="/static/images/footer-instagram.png" width="18" height="18"></a></li>
-                    </ul>
-                    <p>&copy; 2015 #nowplaying <a class="privacylink" href="#">Privacy</a><a class="privacylink"href="#">Terms of Service</a></p>
-                </div>
-            </div>
-        </footer>
-    
+    </footer>
+
 
 	
 
@@ -190,8 +163,6 @@
 
    <script>
         $(function() {
-        	  $("#signupfounder").leanModal();
-            $("#signupinvestor").leanModal();
             $("#loginsignup").leanModal();
         });
          (function() {
