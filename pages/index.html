@@ -19,7 +19,7 @@
             <li><a href="https://github.com/MaheshCasiraghi/bunny_frontend">Frontend Code</a></li>
         </ul>
         
-        <a id="loginsignup" rel="leanModal" name="investor_form" class="button outline" href="#investor_form">Documentation</a>
+        <a id="loginsignup" rel="leanModal" name="investor_form" class="button outline" href="#investor_form">Contact</a>
         
     </header>
     
@@ -52,7 +52,7 @@
             <form action="https://bunnybackend.herokuapp.com/post-tweet" method="GET" id="video-form" target="hidden_iframe_video" onsubmit="submitted=true;">
                 <iframe name="hidden_iframe_video" id="hidden_iframe_video" style="display:none;" onload="if(submitted) { onVideoSubmitted(); }"></iframe>
                 <div id="videoInputWrapper">
-                    <span class="input input--hoshi">
+                    <span id="left" class="input input--hoshi">
                         <input type="url" required pattern="https?://www.youtube.com/.+" name="video" required="true" class="input__field input__field--hoshi" id="video" placeholder="                    http://youtube.com/" onfocus="this.placeholder = ''" onblur="this.placeholder = '                    http://youtube.com/'"/>
                         <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
                             <span class="input__label-content input__label-content--hoshi">Video URL</span>
@@ -60,7 +60,7 @@
                     </span>
                 </div>
                 <div id="commentInputWrapper">
-                    <span class="input input--hoshi">
+                    <span id="right" class="input input--hoshi">
                         <input type="text" name="comment" required="true" class="input__field input__field--hoshi" id="comment" />
                         <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
                             <span class="input__label-content input__label-content--hoshi">Comment</span>
@@ -72,7 +72,7 @@
         </div>
     </section>
     
-    <section class="getactive">
+    <section class="tweetcopy">
         <div id="twitterFeed"></div>
     </section>
     
@@ -81,10 +81,10 @@
         <div id="form-modal">
             <div id="form-header">
                 <a id="closeButton" href="#"></a>
-                <h3 id="signuptitle">But.. where are docs?</h3>
-                <h3 id="thankstitle" style="display:none;">Brilliant! </h3>
-                <p id="calltoaction" class="formcopy">This project is functional but not yet documented. I am going to comment code and produce a readme while flying back to Europe. It will be up hopefully up in a couple of days! :-) For urgent issues, feel free to leave your email here, and I am going to contact sooon.</p>
-                <p id="thanks" class="formcopy" style="display:none;">I am going to reach out asap with news.</p>
+                <h3 id="signuptitle">This is the result of the Bunny Twitter Api Challenge.</h3>
+                <h3 id="thankstitle" style="display:none;">Got questions? </h3>
+                <p id="calltoaction" class="formcopy">Reach out, I'll get to read your message, and get back soon.</p>
+                <p id="thanks" class="formcopy" style="display:none;">Thank you, expect to hear back form me asap! :-)</p>
             </div>
             <form action="https://docs.google.com/forms/d/1ddXeT9u8WgBPs-7TauapzhsM1As1sutBYFznaqq5se8/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onEmailSubmitted(); }"></iframe>

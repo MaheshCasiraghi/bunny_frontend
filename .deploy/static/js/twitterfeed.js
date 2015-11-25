@@ -1,14 +1,8 @@
-function getData() {
 
-$("#locationFillA")
-
-var lat = $("#locationFillA").attr('lat');
-var lon = $("#locationFillA").attr('lat');
-
-  // TEMPORARILY HARDCODED
-
+//initialize twitter feed on the basis of latitude and longitude
+function getData(lat, lon) {
     return $.ajax({
-        url: 'https://bunnybackend.herokuapp.com/get-feed?lat=4.6780276999999995&lon=-74.05063969999999',
+        url: 'https://bunnybackend.herokuapp.com/get-feed?lat=' + lat + '&lon=' + lon,
         dataType: 'json'
     });
 }
@@ -34,6 +28,10 @@ function handleData(data) {
     $('#twitterFeed').html(loadingHTML);
 
 
+
+
+
+
       for(var i=0;i<len;i++){
 
         var tweetscreenname = feeds[i].user.name;
@@ -43,6 +41,7 @@ function handleData(data) {
         var isaretweet = false;
         var isdirect = false;
         var tweetid = feeds[i].id_str;
+        var youtubeVideo = feeds[i].entities.urls[0].display_url.slice(9);       
                     
           //If the tweet has been retweeted, get the profile pic of the tweeter
           if(typeof feeds[i].retweeted_status != 'undefined'){
@@ -71,8 +70,9 @@ function handleData(data) {
               if (displayCounter == 1) {
                 feedHTML += headerHTML;
               }
-                     
+
               feedHTML += '<div class="twitter-article" id="tw'+displayCounter+'">';                                     
+              feedHTML += '<iframe title="YouTube video player" class="youtube-player" type="text/html" width="192" height="117" src="http://www.youtube.com/embed/'+youtubeVideo+'" frameborder="0" allowFullScreen></iframe>';        
               feedHTML += '<div class="twitter-pic"><a href="https://twitter.com/'+tweetusername+'" target="_blank"><img src="'+profileimage+'"images/twitter-feed-icon.png" width="42" height="42" alt="twitter icon" /></a></div>';
               feedHTML += '<div class="twitter-text"><p><span class="tweetprofilelink"><strong><a href="https://twitter.com/'+tweetusername+'" target="_blank">'+tweetscreenname+'</a></strong> <a href="https://twitter.com/'+tweetusername+'" target="_blank">@'+tweetusername+'</a></span><span class="tweet-time"><a href="https://twitter.com/'+tweetusername+'/status/'+tweetid+'" target="_blank">'+relative_time(feeds[i].created_at)+'</a></span><br/>'+status+'</p>';
               
@@ -88,10 +88,35 @@ function handleData(data) {
               displayCounter++;
             }   
            }
+      }
 
 
 
-            }
+
+$('#twitterFeed').html(feedHTML);
+
+
+
+      //Add twitter action animation and rollovers
+      if (showtweetactions == true) {       
+        $('.twitter-article').hover(function(){
+          $(this).find('#twitter-actions').css({'display':'block', 'opacity':0, 'margin-top':-20});
+          $(this).find('#twitter-actions').animate({'opacity':1, 'margin-top':0},200);
+        }, function() {
+          $(this).find('#twitter-actions').animate({'opacity':0, 'margin-top':-20},120, function(){
+            $(this).css('display', 'none');
+          });
+        });     
+      
+        //Add new window for action clicks
+      
+        $('#twitter-actions a').click(function(){
+          var url = $(this).attr('href');
+          window.open(url, 'tweet action window', 'width=580,height=500');
+          return false;
+        });
+      }
+
 
 
     //Function modified from Stack Overflow
@@ -139,13 +164,52 @@ function handleData(data) {
       }
     }
 
-
-$('#twitterFeed').html(feedHTML);
-
 }
 
 
 
 
 
-getData().success(handleData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+

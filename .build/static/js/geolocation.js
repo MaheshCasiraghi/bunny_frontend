@@ -1,3 +1,5 @@
+//Geolocation Funtions
+
 
 // Wait for the geocoder object to be instatntiated before 
 // looking up for the position object through the navigator 
@@ -45,6 +47,8 @@ function codeLatLng(lat, lng) {
   var latlng = new google.maps.LatLng(lat, lng);
   geocoder.geocode({'latLng': latlng}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
+
+
       if (results[1]) {
        //formatted address
 
@@ -57,9 +61,13 @@ function codeLatLng(lat, lng) {
                   //this is the object you are looking for
                   city= results[0].address_components[i];
                   break;
+              } else if (results[0].address_components[i].types[b] == "locality") {
+                city= results[0].address_components[i];
               }
           }
       }
+
+
       //city data
       $("#locationFillA").html(city.short_name)
       $("#locationFillB").html(city.short_name)

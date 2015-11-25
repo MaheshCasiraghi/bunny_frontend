@@ -1,3 +1,5 @@
+// Functions for dialogue menu
+
 (function($){
     $.fn.extend({
         leanModal:function(options){

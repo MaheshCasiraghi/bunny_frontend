@@ -1,3 +1,5 @@
+// Generic functions for modal and header menus
+
 var i = '';
 
 $(function() {
@@ -37,4 +39,6 @@ function onVideoSubmitted() {
     $('#introPreSubmit').hide();
     $('#video-form').hide();
     $('#introPostSubmit').show();
+
+    initialize();
 };
